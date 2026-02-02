@@ -1,8 +1,10 @@
 import torch
 from torch import nn
-
+import argparse
 from dataloader.Imagenet_loader import load_ImageNet, IMAGE_ROOT_PATH
 import os
+
+from model.WS_Net import WS_Net
 
 os.environ['MASTER_ADDR'] = '127.0.0.1'
 os.environ['MASTER_PORT'] = '22222'
@@ -100,13 +102,61 @@ class TrainModel(nn.Module):
         return accuracies
 
 
-if __name__ == '__main__':
-    from model.WS_Net import WS_Net
+def get_args():
+    parser = argparse.ArgumentParser(description='Train WS_Net')
 
+    parser.add_argument(
+        '--model',
+        type=str,
+        default='WS_Net',
+        help='Model name'
+    )
+
+    parser.add_argument(
+        '--epochs',
+        type=int,
+        default=50,
+        help='Number of training epochs'
+    )
+
+    parser.add_argument(
+        '--device',
+        type=str,
+        default='cuda',
+        help='Training device: cuda or cpu'
+    )
+
+    parser.add_argument(
+        '--pretrained',
+        type=str,
+        default='',
+        help='Path to pretrained weights'
+    )
+
+    return parser.parse_args()
+
+def main():
+    args = get_args()
+
+    # -------- model selection (可扩展) --------
+    if args.model == 'WS_Net':
+        model = WS_Net()
+    else:
+        raise ValueError(f"Unknown model: {args.model}")
+
+    # -------- training --------
     training = TrainModel()
-    model = WS_Net()
-    training.train_model(model=model, model_name='WS_Net', epochs=50, device='cuda',
-                         pretrained='')
+
+    training.train_model(
+        model=model,
+        model_name=args.model,
+        epochs=args.epochs,
+        device=args.device,
+        pretrained=args.pretrained
+    )
+
+if __name__ == '__main__':
+    main()
 
 
 

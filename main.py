@@ -4,6 +4,7 @@ import torchvision.transforms as T
 from matplotlib import pyplot as plt
 from torchvision import transforms
 from model.WS_Net import WS_Net
+import argparse
 
 def show_image(x, title='Image'):
 
@@ -23,6 +24,24 @@ def show_image(x, title='Image'):
     plt.axis('off')
     plt.show()
 
+def get_args():
+    parser = argparse.ArgumentParser(description='WS_Net inference')
+
+    parser.add_argument(
+        '--img_path',
+        type=str,
+        required=True,
+        help='Path to input image'
+    )
+
+    parser.add_argument(
+        '--model_path',
+        type=str,
+        required=True,
+        help='Path to trained model weights'
+    )
+
+    return parser.parse_args()
 
 def main(img_path, model_path):
     # load image to tensor
@@ -50,8 +69,14 @@ def main(img_path, model_path):
 
     show_image(x, title='Purified Image')
 
+def main_wrapper():
+    args = get_args()
+
+    main(
+        img_path=args.img_path,
+        model_path=args.model_path
+    )
+
 if __name__ == '__main__':
-    img_path = r"D:\whz\imagenet\test_img\adv_x.png"
-    model_path = r'D:\whz\WS_Net\checkpoint\WS_Net.pth'
-    main(img_path, model_path)
+    main_wrapper()
 
