@@ -1,8 +1,12 @@
 # Wavelet-Guided Frequency-Domain Adaptive Learning (WS-Net)
 
-Official PyTorch implementation of:
+This code is the official implementation of the manuscript:
 
 **Wavelet-Guided Frequency-Domain Adaptive Learning: Balancing Adversarial Defense and High-Fidelity Image Reconstruction**
+
+submitted to *The Visual Computer* .
+
+If you use this code in your research, please kindly cite the corresponding manuscript.
 
 ---
 
@@ -88,15 +92,7 @@ python test.py \
     --model_path checkpoint/WS_Net.pth
 ```
 
-## 📢 Related Manuscript
 
-This code is the official implementation of the manuscript:
-
-**Wavelet-Guided Frequency-Domain Adaptive Learning: Balancing Adversarial Defense and High-Fidelity Image Reconstruction**
-
-submitted to *The Visual Computer* (under review).
-
-If you use this code in your research, please kindly cite the corresponding manuscript.
 
 ## 📬 Contact
 
@@ -104,4 +100,5 @@ For questions or collaborations:
 
 
 Email: hzw@gs.zzu.edu.cn
+
 
