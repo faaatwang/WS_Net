@@ -26,7 +26,8 @@ WS-Net effectively balances:
 
 ## 🧠 Method Pipeline
 
-![img](Wavelet-Guided Frequency-Domain Adaptive Learning (WS-Net).assets/clip_image002.png)
+<img width="576" height="218" alt="clip_image002" src="https://github.com/user-attachments/assets/3d7fc17a-f0cf-4d1a-a476-4be699a29513" />
+
 
 ---
 
@@ -43,7 +44,8 @@ WS-Net effectively balances:
 
 ### Image Quality
 
-![img](Wavelet-Guided Frequency-Domain Adaptive Learning (WS-Net).assets/clip_image002-17699997824452.png)
+<img width="552" height="533" alt="clip_image002-17699997824452" src="https://github.com/user-attachments/assets/03342cc1-6d36-4443-b34a-5ecba51dc8d4" />
+
 
 | Metric | Value       |
 | ------ | ----------- |
@@ -89,5 +91,6 @@ python test.py \
 ## 📬 Contact
 
 For questions or collaborations:
+
 
 Email: hzw@gs.zzu.edu.cn
