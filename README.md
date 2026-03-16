@@ -4,12 +4,6 @@ This code is the official implementation of the manuscript:
 
 **Wavelet-Guided Frequency-Domain Adaptive Learning: Balancing Adversarial Defense and High-Fidelity Image Reconstruction**
 
-submitted to *The Visual Computer* .
-
-If you use this code in your research, please kindly cite the corresponding manuscript.
-
----
-
 ## 🔥 Overview
 
 Adversarial attacks introduce imperceptible perturbations that severely compromise deep neural networks.  
